@@ -6,6 +6,7 @@
     a) Components: Directives with a template. This type of directive is the most common directive type
     b) Structural Directives: Change the DOM layout or view of a webpage by adding or removing DOM elements from the webpage
     c) Attribute Directives: Change the appearance or behavior of an element, component, or another directive
+** Basic HTML validations can be used to validate the form fields. In the case of custom validations, directives can be used. 
 
 3) Mention some common built-in Structural Directives.
 --> 
