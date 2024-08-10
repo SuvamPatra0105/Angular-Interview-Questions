@@ -1,0 +1,21 @@
+1. What are Directives?
+--> Classes that add additional behavior to elements in our Angular Applications. Directives are basically instructions to the DOM.
+
+2. What are the types of Directives?
+--> 
+    a) Components: Directives with a template. This type of directive is the most common directive type
+    b) Structural Directives: Change the DOM layout or view of a webpage by adding or removing DOM elements from the webpage
+    c) Attribute Directives: Change the appearance or behavior of an element, component, or another directive
+
+3) Mention some common built-in Structural Directives.
+--> 
+    •	NgIf: Adds or removes subviews or elements from the template based on condition. 
+            When NgIf is false, Angular removes an element and its descendants from the DOM and creates and displays when it is true.
+    •	NgFor: Used to repeat a node or a portion of HTML template for each item in an iterable list.
+    •	NgSwitch: A set of directives that switch among alternative views.
+
+4) Mention some common built-in Attribute Directives.
+--> 
+    •	NgClass: Adds and removes a set of CSS classes to elements conditionally
+    •	NgStyle: 	Adds and removes a set of HTML styles to elements conditionally
+    •	NgModel: Adds two-way data binding to an HTML form element
