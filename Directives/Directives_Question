@@ -11,7 +11,7 @@
 3) Mention some common built-in Structural Directives.
 --> 
     •	NgIf: Adds or removes subviews or elements from the template based on condition. 
-            When NgIf is false, Angular removes an element and its descendants from the DOM and creates and displays when it is true.
+        When NgIf is false, Angular removes an element and its descendants from the DOM and creates and displays when it is true.
     •	NgFor: Used to repeat a node or a portion of HTML template for each item in an iterable list.
     •	NgSwitch: A set of directives that switch among alternative views.
 
