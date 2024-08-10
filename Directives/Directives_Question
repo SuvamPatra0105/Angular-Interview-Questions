@@ -17,5 +17,5 @@
 4) Mention some common built-in Attribute Directives.
 --> 
     •	NgClass: Adds and removes a set of CSS classes to elements conditionally
-    •	NgStyle: 	Adds and removes a set of HTML styles to elements conditionally
+    •	NgStyle: Adds and removes a set of HTML styles to elements conditionally
     •	NgModel: Adds two-way data binding to an HTML form element
