@@ -13,5 +13,8 @@ Promises: Are not cancellable.
 Observables--- Provide the map for forEach, filter, reduce, retry, and retryWhen operators.
 Promises--- Don’t provide any operations.
 
+Observables--- Have 3 callbacks/callback functions(success, error, complete).
+Promises--- Have 2 callbacks/callback functions(success, error).
+
 Observables--- Deliver errors to the subscribers.
 Promises--- Push errors to the child promises.
