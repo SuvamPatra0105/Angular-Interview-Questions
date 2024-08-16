@@ -1,21 +1,92 @@
 1. Differentiate between Observables and Promises.
 --> 
 
-Observables--- Emit multiple values over a period of time.
 Promises--- Emit a single value at a time.
+Example: new Promise((resolve) => {
+      resolve('promise1');    ---> Emitted
+      resolve('promise2');    ---> Not Emitted
+      resolve('promise3');    ---> Not Emitted
+    })
+Observables--- Emit multiple values over a period of time.
+Example: new Observable((observer) => {
+      observer.next('observable1')
+      observer.next('observable2')
+      observer.next('observable3')
+    })
 
-Observables--- Are lazy: they’re not executed until we subscribe to them using the subscribe() method.
+
 Promises--- Are not lazy(eager): execute immediately after creation.
+Example: new Promise((resolve) => {
+      console.log('PROMISE CALL IS EAGER')      ---> gets printed on Promise creation
+      resolve('promise');
+    })
+Observables--- Are lazy: they’re not executed until we subscribe to them using the subscribe() method.
+Example: new Observable((observer) => {
+      console.log('OBSERVABLE CALL is LAZY')      ---> not get printed unless subscribed
+      observer.next('observable')
+    })
 
-Observables: Have subscriptions that are cancellable using the unsubscribe() method, which stops the listener from receiving further values.
+new Observable((observer) => {
+      console.log('OBSERVABLE CALL is LAZY')      ---> gets printed after subscription
+      observer.next('observable')
+    }).subscribe(res => {......})
+
+
+
 Promises: Are not cancellable.
+Observables: Have subscriptions that are cancellable using the unsubscribe() method, which stops the listener from receiving further values.
+Example: myObservable.unsubscribe()
 
-Observables--- Provide the map for forEach, filter, reduce, retry, and retryWhen operators.
+
 Promises--- Don’t provide any operations.
+Example: new Promise<number>((resolve) => {
+      resolve(5);
+    }).then((res) => res * 2)
+Observables--- Provide the map for forEach, filter, reduce, retry, and retryWhen operators.
+Example: new Observable<number>((observer) => {
+      observer.next(1)
+      observer.next(2)
+      observer.next(3)
+      observer.next(4)
+    }).pipe(map((res) => res * 2)).subscribe(res => {......})
 
-Observables--- Have 3 callbacks/callback functions(success, error, complete).
+Example of Multiple filters: new Observable<number>((observer) => {
+      observer.next(1)
+      observer.next(2)
+      observer.next(3)
+      observer.next(4)
+    }).pipe(filter(x => (x % 2 === 0))).pipe(map((res) => res * 2)).subscribe(res => {.....})
+
+Note: To use rxjs operators with observables, must use "pipe" method
+
+
 Promises--- Have 2 callbacks/callback functions(success, error).
+Example: new Promise((resolve, reject) => {
+  const success = false;
+  if (success) {
+    resolve('Promise resolved successfully');
+  } else {
+    reject(new Error('Something went wrong'));
+  }
+});
+Observables--- Have 3 callbacks/callback functions(success, error, complete).
+Example: new Observable<number>((observer) => {
+      observer.next(1)
+      observer.complete()
+    }).subscribe(
+    res => console.log(res),
+    err => console.log(err),
+    () => console.log('Completed')
+    )
 
+Alternative: new Observable<number>((observer) => {
+      observer.next(1)
+      observer.complete()
+    }).subscribe({
+    next: res => console.log(res),
+    error: err => console.log(err),
+    complete: () => console.log('Completed')
+  })
 
 2. What are callbacks/callback functions? Give example.
 --> A callback is a function that is passed as an argument to another function that executes the callback based on the result. 
