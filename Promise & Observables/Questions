@@ -1,1 +1,17 @@
+1. Differentiate between Observables and Promises.
+--> 
 
+Observables--- Emit multiple values over a period of time.
+Promises--- Emit a single value at a time.
+
+Observables--- Are lazy: they’re not executed until we subscribe to them using the subscribe() method.
+Promises--- Are not lazy(eager): execute immediately after creation.
+
+Observables: Have subscriptions that are cancellable using the unsubscribe() method, which stops the listener from receiving further values.
+Promises: Are not cancellable.
+
+Observables--- Provide the map for forEach, filter, reduce, retry, and retryWhen operators.
+Promises--- Don’t provide any operations.
+
+Observables--- Deliver errors to the subscribers.
+Promises--- Push errors to the child promises.
