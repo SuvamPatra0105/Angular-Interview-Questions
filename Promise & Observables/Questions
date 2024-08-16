@@ -40,3 +40,34 @@ setTimeout(myFunction, 3000);    ---> myFunction is the callback function. It is
 function myFunction() {
   console.log('Hello');
 }
+
+
+3. What is callback hell?
+--> Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. 
+Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code. 
+Example:
+    let x = 0;
+    function call(cb) {
+      setTimeout(() => {
+        x++;
+        cb(x);        ----> first callback
+        setTimeout(() => {
+          x++;
+          cb(x);        ----> this callback depends/waits for previous callback
+          setTimeout(() => {
+            x++;
+            cb(x);        ----> this callback depends/waits for previous callback
+            setTimeout(() => {
+              x++;            
+              cb(x);        ----> this callback depends/waits for previous callback
+            }, 2000);
+          }, 2000);
+        }, 2000);
+      }, 2000);
+    }
+    function calc(val) {
+      document.getElementById("demo").innerHTML = val;
+    }
+    call(calc);
+
+Note: To overcome callback hell, Promises are used for asynchronous programming in JavaScript.
