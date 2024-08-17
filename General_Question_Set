@@ -1,7 +1,13 @@
 1. What is Single Page Application(SPA)?
 --> A Single Page Application (SPA) is a type of web application or website that interacts with the user by dynamically rewriting the current page with new data from the web server(usually through APIs), rather than loading entire new pages from the server. The view and page content is updated without triggering a full page reload.
 
-Trello, Facebook, Gmail, and Twitter are a few single-page app examples. 
+Netflix, Facebook, Gmail, Twitter are a few single-page app examples. 
+
+Use Cases of SPAs:
+Single Page Application is ideal for building dynamic platforms with small data volumes. 
+It is an excellent architecture for SaaS platforms, social networks, and closed communities where search engine optimization doesn’t matter.
+Apart from this, a single page web application fits perfectly well for future mobile app development.
+
 
 Advantages: 
 •	faster and more seamless user experience
@@ -16,6 +22,7 @@ Disadvantages:
 
 •	Slower initial load times
 •	Security issues: Compared to multi-page apps, SPAs are more prone to cross-site scripting attacks. Using XSS, it becomes easy for hackers to introduce client-side scripts into a web app.
+
 
 
 2. What is transpiling in Angular?
