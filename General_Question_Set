@@ -2,6 +2,13 @@
 --> A Single Page Application (SPA) is a type of web application or website that interacts with the user by dynamically rewriting the current page with new data from the web server(usually through APIs), rather than loading entire new pages from the server. The view and page content is updated without triggering a full page reload.
 
 Netflix, Facebook, Gmail, Twitter are a few single-page app examples. 
+Most-Popular Single Page Application Frameworks: 
+1. Meteor
+2. React.JS
+3. Angular.JS
+4. Vue.JS
+5. Backbone.JS
+6. Ember.JS
 
 Use Cases of SPAs:
 Single Page Application is ideal for building dynamic platforms with small data volumes. 
