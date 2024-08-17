@@ -1,2 +1,22 @@
-1. What is transpiling in Angular?
+1. What is Single Page Application(SPA)?
+--> A Single Page Application (SPA) is a type of web application or website that interacts with the user by dynamically rewriting the current page with new data from the web server(usually through APIs), rather than loading entire new pages from the server. The view and page content is updated without triggering a full page reload.
+
+Trello, Facebook, Gmail, and Twitter are a few single-page app examples. 
+
+Advantages: 
+•	faster and more seamless user experience
+•	Quick loading time by reducing the amount of data transferred and the time spent re-rendering the entire page
+•	Boosts application performance 
+•	SPAs consume less bandwidth since they only load web pages once.
+
+Disadvantages:
+•	SEO and Initial Load: Traditional SPAs can face challenges with search engine optimization (SEO) and initial load times. One of the metrics that search engines use is the number of pages a website has. However, since SPAs only load a single page, it is a disadvantage when ranking/indexing on search engines.
+
+[ Note: Techniques like server-side rendering (SSR) or static site generation (SSG) can help mitigate these SEO issues. ]
+
+•	Slower initial load times
+•	Security issues: Compared to multi-page apps, SPAs are more prone to cross-site scripting attacks. Using XSS, it becomes easy for hackers to introduce client-side scripts into a web app.
+
+
+2. What is transpiling in Angular?
 --> Transpiling is the process of transforming the source code of one programming language into the source code of another. Typically, in Angular, this implies translating TypeScript to JavaScript. TypeScript can be used to develop code for your Angular application, which is subsequently transpiled to JavaScript. This occurs naturally and internally.
