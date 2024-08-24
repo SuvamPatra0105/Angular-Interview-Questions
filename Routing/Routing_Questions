@@ -23,7 +23,7 @@ Angular Routerlink: It provides a more dynamic and efficient way of handling nav
 
 
 4. What is RouterLinkActive Directive?
----> The RouterLinkActive is a directive for adding or removing CSS classes from an HTML element that is bound to RouteLink.
+---> The RouterLinkActive is a directive for adding or removing CSS classes from an HTML element that is bound to RouterLink.
 The main use case of RouterLinkActive directive is to highlight which route is currently active.
 Using Router LinkActive directive, we can toggle CSS classes for active route link based on the current router state.
 
