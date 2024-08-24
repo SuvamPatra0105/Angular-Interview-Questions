@@ -1,0 +1,80 @@
+1. What is Routing in Angular?
+---> Routing allows us to navigate from one part of our application to another part. In Angular, using routing, we can move from view of one component to view of another component.
+To implement routing in Angular, we use a built-in @angular/router module.
+
+2. What is routerLink?
+---> The RouterLink is a directive that binds the HTML element to a Route. When the HTML element on which we have used the Router Link is clicked, it will result in navigation to that Route.
+
+Example: 
+<a routerLink="About">About</a> 
+`or` 
+<a [routerLink]="'About'">About</a>  ---> Conventional way
+`or` 
+<a [routerLink]="['About']">About</a>      
+
+----> Will route to 'About' page on clicking the anchor tag
+
+NOTE: Router Link directive is an attribute directive and we can also pass additional parameters it.
+
+3(IMP!!). What is the difference between anchor href vs angular routerlink in Angular? 
+---> Anchor Href(Hypertext Reference): It triggers a full page reload when navigating to a different route, resulting in a complete page refresh and a new page being loaded from server.
+
+Angular Routerlink: It provides a more dynamic and efficient way of handling navigation compared to traditional href links, as it updates the view without triggering a full page reload/used to navigate between routes 'within' an Angular application. The routerLink can also take an array to navigate with parameters or additional options.
+
+
+4. What is RouterLinkActive Directive?
+---> The RouterLinkActive is a directive for adding or removing CSS classes from an HTML element that is bound to RouteLink.
+The main use case of RouterLinkActive directive is to highlight which route is currently active.
+Using Router LinkActive directive, we can toggle CSS classes for active route link based on the current router state.
+
+Example: 
+<a routerLink="About" routerLinkActive="active">About</a>
+`or`
+<a [routerLink]="'About'" [routerLinkActive]="'active'">About</a>     ---> Applies 'active' CSS class styles to currently active route
+
+
+5. What is RouterLinkActiveOptions directive?
+---> When a child route is active, then all the parent routes are also marked as active. In that case, routeLinkActive directive is applied to the active child route and all its parent routes.
+Using RouterLinkActiveOptions directive, we can set some options for routerLinkActive directive. One of the options we can set is the exact property which tells how to match the route path for styling the active route.
+
+Example: 
+<a [routerLink]="'Home'" [routerLinkActive]="'active'">Home</a>
+<a [routerLink]="['Home/Course']" [routerLinkActive]="'active'">Course</a>    ---> On navigating to Course, both links will be marked as `active` as Home is the parent route of Course.
+
+Using RouterLinkActiveOptions:
+<a [routerLink]="'Home'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+<a [routerLink]="['Home/Course']" [routerLinkActive]="'active'">Course</a>    ---> Now only the Course link will be marked as `active` on navigating
+
+Note: Make sure to bind the routerLinkActiveOptions directive to the parent routing link
+Note: {exact: true} - If exact property is set to true, the routerLinkActive class is applied only when the current route exactly matches the route specified in the `routerLink`. If set to false, the class will be applied if the current route matches any route that starts with the specified route.
+
+6. What is absolute path?
+---> When we use a slash ("/") before the router link path, in that case it uses absolute path and the path is directly appended to root url.
+‹a routerLink="/About">About</a>
+URL: localhost:4200/About
+
+7. What is relative path?
+---> When we do not use a slash ("/") before the router link path, in that case it uses relative path and the path is 'appended to the currently active route'.
+For example, let us say the currently active route is `About`. And a link is defined in About page to go to `Home` page as shown below. If that link is clicked, the path will be appended to currently active route.
+‹a routerLink="Home">Go to Home</a>
+URL: localhost:4200/About/Home
+
+Note: Home routing path and link should be defined inside `About` Component(`Home` should be a child component of `About`)
+
+Alternative ways of declaring Relative Paths:
+‹a routerLink="Home">Go to Home</a>
+`or`
+‹a routerLink="./Home">Go to Home</a>      --->  `./` also defines relative path
+`or`
+‹a routerLink="../Home">Go to Home</a>     ---> Appends Home to "up one level" in the route hierarchy. 
+For example, assume your Current Active Router Link Path is localhost:4200/products/123 and you use: 
+<a routerLink="../Home">Go to Home</a>
+then ../ moves up from /products/123 to /products
+
+Resolved URL: localhost:4200/products/Home
+
+When we use ("../../") before the router link path, in that case it will move `two level up` and the path will be appended after removing last two paths from the URL
+Current Active Router Link Path: localhost:4200/Books/Author
+‹a routerLink="../../Stephen-King">Stephen King</a>
+URL: localhost:4200/Stephen-King
+
