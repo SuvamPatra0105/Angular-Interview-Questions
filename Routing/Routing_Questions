@@ -1,9 +1,11 @@
 1. What is Routing in Angular?
----> Routing allows us to navigate from one part of our application to another part. In Angular, using routing, we can move from view of one component to view of another component.
+---> Routing allows us to navigate from one part of our application to another part. 
+In Angular, using routing, we can move from view of one component to view of another component.
 To implement routing in Angular, we use a built-in @angular/router module.
 
 2. What is routerLink?
----> The RouterLink is a directive that binds the HTML element to a Route. When the HTML element on which we have used the Router Link is clicked, it will result in navigation to that Route.
+---> The RouterLink is a directive that binds the HTML element to a Route. 
+When the HTML element on which we have used the Router Link is clicked, it will result in navigation to that Route.
 
 Example: 
 <a routerLink="About">About</a> 
