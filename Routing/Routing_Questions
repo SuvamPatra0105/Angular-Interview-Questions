@@ -80,3 +80,27 @@ Current Active Router Link Path: localhost:4200/Books/Author
 ‹a routerLink="../../Stephen-King">Stephen King</a>
 URL: localhost:4200/Stephen-King
 
+
+8. What are Route parameters?
+---> The route parameters are the dynamic part of the route whose value can change. These parameters provides a way to pass extra information to a given route.
+
+Example: 
+localhost:4200/Books/Author/Stefen-King      
+---> Books, Author, Stefen-King are route parameters. `Books` and `Author` are static segments of the path.
+`Stefen-King` is a dynamic segment and represents the parameter value.
+
+9. What are Query strings/ Queryparams in Routing?
+---> Query Strings are the optional data that we can pass to a component through a route. These query strings are added at the end of the route after a ? 
+
+Example:  
+localhost:4200/Books/Author?name=stefen        ----> name is query string
+localhost: 4200/Products/product?id=12345&name=iphone        ----> id, name are query strings
+
+10. Which one is mandatory and optional among Route Parameters and Query Strings/Params?
+---> Route parameters are required and it is used by Angular router to determine the route. Route Parameters are part of route definition.
+Query strings are optional data which we pass through route. If the query parameter is missing in the URL, then it will not stop angular from navigating to the route.
+
+11. What is fragment in Angular Routing?
+---> A fragment in a route is a link which jumps to a section or a content in the HTML page, which contains the ID mentioned in the fragment. A fragment comes after a # sign
+
+Example: localhost:4200/Home#Services      ----> `Services` is a fragment
