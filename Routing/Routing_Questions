@@ -80,7 +80,6 @@ Current Active Router Link Path: localhost:4200/Books/Author
 ‹a routerLink="../../Stephen-King">Stephen King</a>
 URL: localhost:4200/Stephen-King
 
-
 8. What are Route parameters?
 ---> The route parameters are the dynamic part of the route whose value can change. These parameters provides a way to pass extra information to a given route.
 
@@ -104,3 +103,21 @@ Query strings are optional data which we pass through route. If the query parame
 ---> A fragment in a route is a link which jumps to a section or a content in the HTML page, which contains the ID mentioned in the fragment. A fragment comes after a # sign
 
 Example: localhost:4200/Home#Services      ----> `Services` is a fragment
+
+12. How can we navigate to a route programmatically?
+---> Using navigate() and navigateByUrl() methods, we can navigate from one route to another programmatically.
+
+13. Differentiate between navigate() and navigateByUrl() methods.
+---> 
+•	navigate: The navigate method takes an array as an argument and in that array we can specify route segments.
+Example: this.router.navigate(['Books', 'Author', 101])  or this.router.navigate('Books/Author/101');
+Navigated URL: localhost:4200/Books/Author/101
+
+•	navigateByUrl: The navigateByUrl method takes a string value as an argument and that string value should contain all the route segments.
+Example: this.router.navigateByUrl('Books/Author/101');
+Navigated URL: localhost:4200/Books/Author/101
+
+•	navigate: In navigate path is by default absolute. However we can modify it to relative path using 'relativeTo' property.
+Example: this.route.navigate(['Course'], {relativeTo: this.activatedRoute})    ----> this.activatedRoute is a property of ActivatedRoute class of '@angular/router'.
+
+•	navigateByUrl: in navigateByUrl path is by default absolute. Using relative path isn't possible.
