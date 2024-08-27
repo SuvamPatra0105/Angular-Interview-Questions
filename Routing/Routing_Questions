@@ -49,7 +49,8 @@ Using RouterLinkActiveOptions:
 <a [routerLink]="['Home/Course']" [routerLinkActive]="'active'">Course</a>    ---> Now only the Course link will be marked as `active` on navigating
 
 Note: Make sure to bind the routerLinkActiveOptions directive to the parent routing link
-Note: {exact: true} - If exact property is set to true, the routerLinkActive class is applied only when the current route exactly matches the route specified in the `routerLink`. If set to false, the class will be applied if the current route matches any route that starts with the specified route.
+Note: {exact: true} - If exact property is set to true, the routerLinkActive class is applied only when the current route exactly matches the route specified in the `routerLink`. 
+If set to false, the class will be applied if the current route matches any route that starts with the specified route.
 
 6. What is absolute path?
 ---> When we use a slash ("/") before the router link path, in that case it uses absolute path and the path is directly appended to root url.
