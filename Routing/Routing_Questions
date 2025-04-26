@@ -114,7 +114,7 @@ Example: localhost:4200/Home#Services      ----> `Services` is a fragment
 13. Differentiate between navigate() and navigateByUrl() methods.
 ---> 
 •	navigate: The navigate method takes an array as an argument and in that array we can specify route segments.
-Example: this.router.navigate(['Books', 'Author', 101])  or this.router.navigate('Books/Author/101');
+Example: this.router.navigate(['Books', 'Author', 101])
 Navigated URL: localhost:4200/Books/Author/101
 
 •	navigateByUrl: The navigateByUrl method takes a string value as an argument and that string value should contain all the route segments.
