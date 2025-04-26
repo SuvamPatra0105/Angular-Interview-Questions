@@ -24,6 +24,8 @@ NOTE: Router Link directive is an attribute directive and we can also pass addit
 Angular Routerlink: It provides a more dynamic and efficient way of handling navigation compared to traditional href links, as it updates the view without triggering a full page reload/used to navigate between routes 'within' an Angular application.
 The routerLink can also take an array to navigate with parameters or additional options.
 
+<a [routerLink]="['/user', userId]">Go to User</a>
+{ path: 'user/:id', component: UserComponent }
 
 4. What is RouterLinkActive Directive?
 ---> The RouterLinkActive is a directive for adding or removing CSS classes from an HTML element that is bound to RouterLink.
