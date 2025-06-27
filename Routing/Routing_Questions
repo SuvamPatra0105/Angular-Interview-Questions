@@ -128,7 +128,29 @@ Query strings are optional data which we pass through route. If the query parame
 12. What is fragment in Angular Routing?
 ---> A fragment in a route is a link which jumps to a section or a content in the HTML page, which contains the ID mentioned in the fragment. A fragment comes after a # sign
 
-Example: localhost:4200/Home#Services      ----> `Services` is a fragment
+Example: localhost:4200/child#Services      ----> `Services` is a fragment
+
+In html:
+<a [routerLink]="['/child']" fragment="Services">Go to Team</a>
+
+In ts:
+this.router.navigate(['child'], { fragment: 'Services' });
+
+Fetching a fragment:
+export class ChildComponent {
+  constructor(private route: ActivatedRoute) {}
+
+  ngAfterViewInit() {
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment) {
+        const el = document.getElementById(fragment);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });  // will scroll down to the section
+        }
+      }
+    });
+  }
+}
 
 13. How can we navigate to a route programmatically?
 ---> Using navigate() and navigateByUrl() methods, we can navigate from one route to another programmatically.
